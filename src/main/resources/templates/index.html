@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Upload CSV File Example</title>
+
+    <!--Bootstrap 4-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/site.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container py-5">
+    <div class="row">
+        <div class="col">
+            <ul class="nav nav-tabs mt-5" id="myTabs">
+                <li class="nav-item"><a href="#add" data-toggle="tab" class="nav-link active">Add</a></li>
+                <li class="nav-item"><a href="#upload" data-toggle="tab"  class="nav-link">Upload CSV</a></li>
+            </ul>
+
+            <div class="tab-content pt-3">
+                <div class="tab-pane  active" id="add">
+                    <div class="col-6 mx-auto">
+                        <h2>Bank Details </h2>
+                        <form method="POST" th:action="@{/add-bank-details}" th:object="${bankDetailsVO}" enctype="multipart/form-data">
+                            <div class="form-group mt-3">
+                                <label for="bank">Bank Name </label>
+                                <input type="text" name="bank" class="form-control-file" id="bank">
+                            </div>
+                            <div class="form-group mt-3">
+                                <label for="cardNumber">Card Number</label>
+                                <input type="text" name="cardNumber" class="form-control-file" id="cardNumber">
+                            </div>
+                            <div class="form-group mt-3">
+                                <label for="expiryDate">Expiry date</label>
+                                <input type="date" name="expiryDate" class="form-control-file" id="expiryDate">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save</button>
+                        </form>
+                    </div>
+
+                </div>
+                <div class="tab-pane" id="upload">
+                    <div class="col-6 mx-auto">
+                        <h1>Upload CSV File Example</h1>
+                        <form method="POST" th:action="@{/upload}" enctype="multipart/form-data">
+                            <div class="form-group mt-3">
+                                <label for="file">Select a CSV file</label>
+                                <input type="file" name="file" class="form-control-file" id="file" accept=".csv">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Import Users</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <div id="content_refresh" style="text-align: center;margin:0 auto;width: 100%" th:fragment="content_refresh">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Bank</th>
+                <th scope="col">Card Number</th>
+                <th scope="col">Expiry Date</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="bankDetail, iStat : ${bankDetails}">
+                <th scope="row" th:text="${bankDetail.getId()}"> </th>
+                <td th:text="${bankDetail.getBank()}"></td>
+                <td th:text="${bankDetail.getCardNumber()}"></td>
+                <td th:text="${bankDetail.getExpiryDate()}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+
+</script>
+</body>
+</html>
