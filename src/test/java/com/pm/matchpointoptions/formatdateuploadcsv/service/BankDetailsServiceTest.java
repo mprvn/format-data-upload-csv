@@ -73,7 +73,6 @@ class BankDetailsServiceTest {
         Mockito.when(bankDetailsRepository.findAll()).thenReturn(list);
        List<BankDetails> details =  bankDetailsService.saveAllBankDetail(list);
         assertEquals(details.get(0).getBank(),bankDetailsMock.getBank() );
-        assertEquals(details.get(0).getCardNumber(),bankDetailsMock.getCardNumber() );
 
     }
 }
