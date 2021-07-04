@@ -22,7 +22,7 @@ public class BankDetailsController {
     public BankDetails saveBankDetails(@RequestBody BankDetailsVO bankDetails) {
         return bankDetailsService.saveBankDetails(bankDetails);
     }
-    @GetMapping("/bankDetails")
+    @GetMapping("/bankdetails")
     public List<BankDetails> getBankDetails() {
         return bankDetailsService.getBankDetails();
     }
