@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.pm.matchpointoptions.formatdateuploadcsv.controller.BankDetailsMVCControllerTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 16.168 s - in com.pm.matchpointoptions.formatdateuploadcsv.controller.BankDetailsMVCControllerTest
