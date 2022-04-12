@@ -1,8 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.pm.matchpointoptions.formatdateuploadcsv.service.BankDetailsServiceTest
--------------------------------------------------------------------------------
-Tests run: 3, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.08 s <<< FAILURE! - in com.pm.matchpointoptions.formatdateuploadcsv.service.BankDetailsServiceTest
-saveAllBankDetail  Time elapsed: 0.01 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <1234-xxxx-xxxx-xxxx> but was: <1234-1234-1234-1234>
-	at com.pm.matchpointoptions.formatdateuploadcsv.service.BankDetailsServiceTest.saveAllBankDetail(BankDetailsServiceTest.java:76)
-
